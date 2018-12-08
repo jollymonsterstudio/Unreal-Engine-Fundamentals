@@ -9,6 +9,6 @@ The base project for this tutorial comes from [Player Character Series - Part 5 
 
 You can find more details on the subject here: http://jollymonsterstudio.com/2018/12/07/ue4-c-fundamentals-structs/
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/eTewPCRqqqI
 
 Hope this helps, Thanks.

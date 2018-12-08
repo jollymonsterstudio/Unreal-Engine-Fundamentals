@@ -11,7 +11,7 @@ Each directory represents a project associated with a video and a tutorial page.
 
 You can find more details here: http://jollymonsterstudio.com/2018/12/07/ue4-c-fundamentals-structs/
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/eTewPCRqqqI
 
 
 
