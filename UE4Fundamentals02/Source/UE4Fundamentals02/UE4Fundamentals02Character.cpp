@@ -55,6 +55,13 @@ AUE4Fundamentals02Character::AUE4Fundamentals02Character()
 		MeleeFistAttackMontage = MeleeFistAttackMontageObject.Object;
 	}
 
+	// load player attack montage data table
+	static ConstructorHelpers::FObjectFinder<UDataTable> PlayerAttackMontageDataObject(TEXT("DataTable'/Game/TUTORIAL_RESOURCES/DataTables/PlayerAttackMontageDataTable.PlayerAttackMontageDataTable'"));
+	if (PlayerAttackMontageDataObject.Succeeded())
+	{
+		PlayerAttackDataTable = PlayerAttackMontageDataObject.Object;
+	}
+
 	// load the sound cue object
 	static ConstructorHelpers::FObjectFinder<USoundCue> PunchSoundCueObject(TEXT("SoundCue'/Game/TUTORIAL_RESOURCES/Audio/PunchSoundCue.PunchSoundCue'"));
 	if (PunchSoundCueObject.Succeeded())
@@ -194,13 +201,21 @@ void AUE4Fundamentals02Character::AttackInput()
 {
 	Log(ELogLevel::INFO, __FUNCTION__);
 
-	// generate  number between 1 and 3:
-	int MontageSectionIndex = rand() % 3 + 1;
+	if (PlayerAttackDataTable)
+	{
+		static const FString ContextString(TEXT("Player Attack Montage Context"));
+		FPlayerAttackMontage* AttackMontage = PlayerAttackDataTable->FindRow<FPlayerAttackMontage>(FName(TEXT("Punch1")), ContextString, true);
+		if (AttackMontage)
+		{
+			// generate  number between 1 and whatever is defined in the data table for this montage :
+			int MontageSectionIndex = rand() % AttackMontage->AnimSectionCount + 1;
 
-	// create a montage section
-	FString MontageSection = "start_" + FString::FromInt(MontageSectionIndex);
+			// create a montage section
+			FString MontageSection = "start_" + FString::FromInt(MontageSectionIndex);
 
-	PlayAnimMontage(MeleeFistAttackMontage, 1.f, FName(*MontageSection));
+			PlayAnimMontage(AttackMontage->Montage, 1.f, FName(*MontageSection));
+		}
+	}
 }
 
 void AUE4Fundamentals02Character::AttackStart()

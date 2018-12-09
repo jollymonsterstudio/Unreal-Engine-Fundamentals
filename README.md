@@ -15,10 +15,9 @@ You can find the associated video tutorial here: https://youtu.be/eTewPCRqqqI
 
 ### [Fundamentals 02 - Data Tables](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals02)
 
-You can find more details here: TBD
+You can find more details here: http://jollymonsterstudio.com/2018/12/08/ue4-c-fundamentals-datatables/
 
-You can find the associated video tutorial here: TBD
-
+You can find the associated video tutorial here: https://youtu.be/emhNwBAZ9k4
 
 
 

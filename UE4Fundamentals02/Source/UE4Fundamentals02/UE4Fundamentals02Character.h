@@ -8,8 +8,26 @@
 #include "Components/BoxComponent.h"
 #include "Components/AudioComponent.h"
 
+#include "Engine/DataTable.h"
+
 #include "UE4Fundamentals02Character.generated.h"
 
+USTRUCT(BlueprintType)
+struct FPlayerAttackMontage : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	/** Melee Fist Attack Montage **/
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		UAnimMontage* Montage;
+
+	/** amount of start sections within our montage **/
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		int32 AnimSectionCount;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		FString Description;
+};
 
 USTRUCT(BlueprintType)
 struct FMeleeCollisionProfile
@@ -64,9 +82,13 @@ class AUE4Fundamentals02Character : public ACharacter
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
 
-	/** Melle Fist Attack Montage **/
+	/** Melee Fist Attack Montage **/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
 		class UAnimMontage* MeleeFistAttackMontage;
+
+	/** melee attack data table **/
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+		class UDataTable* PlayerAttackDataTable;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Audio, meta = (AllowPrivateAccess = "true"))
 		class USoundCue* PunchSoundCue;

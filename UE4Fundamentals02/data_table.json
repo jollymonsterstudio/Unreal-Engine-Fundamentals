@@ -1,0 +1,14 @@
+[
+	{
+		"Name": "Punch1",
+		"Montage": "AnimMontage'/Game/TUTORIAL_RESOURCES/Animations/MeleeFistAttackMontage.MeleeFistAttackMontage'",
+		"AnimSectionCount": 3,
+		"Description": "Attacks primarly focused on punching"
+	},
+	{
+		"Name": "Punch2",
+		"Montage": "AnimMontage'/Game/TUTORIAL_RESOURCES/Animations/MeleeFistAttackMontage_2.MeleeFistAttackMontage_2'",
+		"AnimSectionCount": 3,
+		"Description": "Attacks primarly focused on elbowing"
+	}
+]
