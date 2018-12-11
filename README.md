@@ -19,6 +19,10 @@ You can find more details here: http://jollymonsterstudio.com/2018/12/08/ue4-c-f
 
 You can find the associated video tutorial here: https://youtu.be/emhNwBAZ9k4
 
+### [Fundamentals 03 - UAnimNotify & UAnimNotifyState](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals03)
 
+You can find more details here: http://jollymonsterstudio.com/2018/12/10/unreal-engine-c-fundamentals-uanimnotify-uanimnotifystate/
+
+You can find the associated video tutorial here: https://youtu.be/A0rkOSDp_jQ
 
 Hope this helps, Thanks.
