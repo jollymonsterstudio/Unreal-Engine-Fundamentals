@@ -27,8 +27,8 @@ You can find the associated video tutorial here: https://youtu.be/A0rkOSDp_jQ
 
 ### [Fundamentals 04 - UAnimInstance](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals04)
 
-You can find more details here: TBD
+You can find more details here: http://jollymonsterstudio.com/2018/12/13/unreal-engine-c-fundamentals-uaniminstance/
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/Es7iPIrh0ow
 
 Hope this helps, Thanks.
