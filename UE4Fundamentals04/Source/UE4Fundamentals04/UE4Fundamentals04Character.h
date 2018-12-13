@@ -181,7 +181,6 @@ public:
 
 private:
 	UAudioComponent* PunchAudioComponent;
-	
 
 	FMeleeCollisionProfile MeleeCollisionProfile;
 

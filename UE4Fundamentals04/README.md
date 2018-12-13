@@ -1,5 +1,5 @@
 # Unreal Engine C++ Fundamentals
-### Fundamentals 04 - UAnimMontage
+### Fundamentals 04 - UAnimInstance
 
 Hey guys,
 
