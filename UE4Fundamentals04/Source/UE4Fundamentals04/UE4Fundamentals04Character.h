@@ -101,6 +101,9 @@ class AUE4Fundamentals04Character : public ACharacter
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Collision, meta = (AllowPrivateAccess = "true"))
 		class UBoxComponent* RightFistCollisionBox;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Animation, meta = (AllowPrivateAccess = "true"))
+		float AnimationVariable;
 	
 public:
 	AUE4Fundamentals04Character();
@@ -181,6 +184,8 @@ public:
 
 private:
 	UAudioComponent* PunchAudioComponent;
+
+	FPlayerAttackMontage* AttackMontage;
 
 	FMeleeCollisionProfile MeleeCollisionProfile;
 

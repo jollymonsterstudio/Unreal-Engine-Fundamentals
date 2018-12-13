@@ -221,7 +221,7 @@ void AUE4Fundamentals04Character::AttackInput()
 	if (PlayerAttackDataTable)
 	{
 		static const FString ContextString(TEXT("Player Attack Montage Context"));
-		FPlayerAttackMontage* AttackMontage = PlayerAttackDataTable->FindRow<FPlayerAttackMontage>(FName(TEXT("Punch1")), ContextString, true);
+		AttackMontage = PlayerAttackDataTable->FindRow<FPlayerAttackMontage>(FName(TEXT("Punch1")), ContextString, true);
 		if (AttackMontage)
 		{
 			// generate  number between 1 and whatever is defined in the data table for this montage :
@@ -275,6 +275,19 @@ void AUE4Fundamentals04Character::OnAttackHit(UPrimitiveComponent* HitComponent,
 		PunchAudioComponent->SetPitchMultiplier(FMath::RandRange(1.0f, 1.3f));
 		// play the sound
 		PunchAudioComponent->Play(0.f);
+	}
+
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance)
+	{
+		// kind of working, animation still moves through target but blends back out on hit and looks almost natural
+		//AnimInstance->Montage_Stop(AnimationVariable, AttackMontage->Montage);
+
+		// note pause as it will provide some fun functionality in later tutorials
+		//AnimInstance->Montage_Pause(AttackMontage->Montage);
+
+		
+		AnimInstance->Montage_Play(AttackMontage->Montage, AnimationVariable, EMontagePlayReturnType::Duration, AnimInstance->Montage_GetPosition(AttackMontage->Montage), true);
 	}
 }
 
