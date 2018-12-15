@@ -13,6 +13,18 @@
 #include "UE4Fundamentals02Character.generated.h"
 
 USTRUCT(BlueprintType)
+struct FDieWasserspinne : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TAssetPtr<USkeletalMeshComponent> SkeletalMesh;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TAssetSubclassOf<UAnimMontage> AnotherProperty;
+};
+
+USTRUCT(BlueprintType)
 struct FPlayerAttackMontage : public FTableRowBase
 {
 	GENERATED_BODY()
