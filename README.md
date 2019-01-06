@@ -31,4 +31,10 @@ You can find more details here: http://jollymonsterstudio.com/2018/12/13/unreal-
 
 You can find the associated video tutorial here: https://youtu.be/Es7iPIrh0ow
 
+### [Fundamentals 05 - LineTraceSingleByChannel](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals05)
+
+You can find more details here: TBD
+
+You can find the associated video tutorial here: TBD
+
 Hope this helps, Thanks.
