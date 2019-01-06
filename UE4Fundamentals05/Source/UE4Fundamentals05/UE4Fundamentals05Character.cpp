@@ -16,6 +16,8 @@
 
 AUE4Fundamentals05Character::AUE4Fundamentals05Character()
 {
+	PrimaryActorTick.bCanEverTick = true;
+
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
@@ -91,6 +93,9 @@ AUE4Fundamentals05Character::AUE4Fundamentals05Character()
 
 	// set animation blending on by default
 	IsAnimationBlended = true;
+
+	LineTraceType = ELineTraceType::CAMERA_SINGLE;
+	LineTraceDistance = 0.f;
 }
 
 void AUE4Fundamentals05Character::BeginPlay()
@@ -113,6 +118,14 @@ void AUE4Fundamentals05Character::BeginPlay()
 		// NOTE: do not do this in the constructor as it will play the sound when the player spawns
 		PunchThrowAudioComponent->SetSound(PunchThrowSoundCue);
 	}
+}
+
+void AUE4Fundamentals05Character::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	// enable to fire all the time
+	//FireLineTrace();
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -146,6 +159,8 @@ void AUE4Fundamentals05Character::SetupPlayerInputComponent(class UInputComponen
 	// attack functionality
 	PlayerInputComponent->BindAction("Punch", IE_Pressed, this, &AUE4Fundamentals05Character::PunchAttack);
 	PlayerInputComponent->BindAction("Kick", IE_Pressed, this, &AUE4Fundamentals05Character::KickAttack);
+
+	PlayerInputComponent->BindAction("FireTrace", IE_Pressed, this, &AUE4Fundamentals05Character::FireLineTrace);
 	
 }
 
@@ -232,7 +247,7 @@ void AUE4Fundamentals05Character::KickAttack()
 
 void AUE4Fundamentals05Character::AttackInput(EAttackType AttackType)
 {
-	Log(ELogLevel::INFO, __FUNCTION__);
+	//Log(ELogLevel::INFO, __FUNCTION__);
 
 	if (PlayerAttackDataTable)
 	{
@@ -289,7 +304,7 @@ void AUE4Fundamentals05Character::AttackInput(EAttackType AttackType)
 
 void AUE4Fundamentals05Character::AttackStart()
 {
-	Log(ELogLevel::INFO, __FUNCTION__);
+	//Log(ELogLevel::INFO, __FUNCTION__);
 
 	LeftMeleeCollisionBox->SetCollisionProfileName(MeleeCollisionProfile.Enabled);
 	LeftMeleeCollisionBox->SetNotifyRigidBodyCollision(true);
@@ -300,7 +315,7 @@ void AUE4Fundamentals05Character::AttackStart()
 
 void AUE4Fundamentals05Character::AttackEnd()
 {
-	Log(ELogLevel::INFO, __FUNCTION__);
+	//Log(ELogLevel::INFO, __FUNCTION__);
 
 	LeftMeleeCollisionBox->SetCollisionProfileName(MeleeCollisionProfile.Disabled);
 	LeftMeleeCollisionBox->SetNotifyRigidBodyCollision(false);
@@ -311,8 +326,8 @@ void AUE4Fundamentals05Character::AttackEnd()
 
 void AUE4Fundamentals05Character::OnAttackHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	Log(ELogLevel::WARNING, __FUNCTION__);
-	Log(ELogLevel::WARNING, Hit.GetActor()->GetName());
+	//Log(ELogLevel::WARNING, __FUNCTION__);
+	//Log(ELogLevel::WARNING, Hit.GetActor()->GetName());
 
 	// check to make sure the audio component is initialized and we are not already playing a sound
 	if (PunchAudioComponent && !PunchAudioComponent->IsPlaying())
@@ -342,6 +357,93 @@ void AUE4Fundamentals05Character::OnAttackHit(UPrimitiveComponent* HitComponent,
 		AnimInstance->Montage_Play(AttackMontage->Montage, AnimationVariable, EMontagePlayReturnType::Duration, AnimInstance->Montage_GetPosition(AttackMontage->Montage), true);
 	}
 }
+
+
+void AUE4Fundamentals05Character::FireLineTrace()
+{
+	Log(ELogLevel::WARNING, __FUNCTION__);
+
+	FVector Start;
+	FVector End;
+
+	// convert the degrees to radians
+	const float Spread = FMath::DegreesToRadians(LineTraceSpread * 0.5f);
+
+	if (LineTraceType == ELineTraceType::CAMERA_SINGLE || LineTraceType == ELineTraceType::CAMERA_SCATTER)
+	{
+		// get the camera view
+		FVector CameraLoc = FollowCamera->GetComponentLocation();
+		FRotator CameraRot = FollowCamera->GetComponentRotation();
+
+		Start = CameraLoc;
+
+		// add in distance to our look locations
+		if (LineTraceType == ELineTraceType::CAMERA_SCATTER)
+		{
+			// handle spread
+			End = CameraLoc + FMath::VRandCone(CameraRot.Vector(), Spread, Spread) * LineTraceDistance;
+		}
+		else {
+			End = CameraLoc + (CameraRot.Vector() * LineTraceDistance);
+		}
+	}
+	// handle player view of the same thing
+	else if (LineTraceType == ELineTraceType::PLAYER_SINGLE || LineTraceType == ELineTraceType::PLAYER_SCATTER) 
+	{
+		FVector PlayerEyesLoc;
+		FRotator PlayerEyesRot;
+
+		// get the point of view of the actor
+		GetActorEyesViewPoint(PlayerEyesLoc, PlayerEyesRot);
+
+		Start = PlayerEyesLoc;
+
+		// handle spread
+		if (LineTraceType == ELineTraceType::PLAYER_SCATTER)
+		{
+			End = PlayerEyesLoc + FMath::VRandCone(PlayerEyesRot.Vector(), Spread, Spread) * LineTraceDistance;
+		}
+		else {
+			End = PlayerEyesLoc + (PlayerEyesRot.Vector() * LineTraceDistance);
+		}
+	}
+
+	
+	// additional trace parameters
+	FCollisionQueryParams TraceParams(FName(TEXT("InteractTrace")), true, NULL);
+	TraceParams.bTraceComplex = true;
+	TraceParams.bReturnPhysicalMaterial = true;
+
+	//Re-initialize hit info
+	FHitResult HitOut = FHitResult(ForceInit);
+
+
+
+	bool bIsHit = GetWorld()->LineTraceSingleByChannel(
+		HitOut,					//	FHitResult object that will be populated with hit info
+		Start,					//	starting position
+		End,					//	end position
+		ECC_GameTraceChannel3,	//	collision channel
+		TraceParams				//	additional trace settings
+	);
+
+
+
+	if (bIsHit)
+	{
+		Log(ELogLevel::WARNING, "We hit something");
+		// start to end, green, will lines always stay on, depth priority, thickness of line
+		DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 5.f, ECC_WorldStatic, 1.f);
+	}
+	else
+	{
+		Log(ELogLevel::WARNING, "Nothing was hit");
+		// start to end, purple, will lines always stay on, depth priority, thickness of line
+		DrawDebugLine(GetWorld(), Start, End, FColor::Purple, false, 5.f, ECC_WorldStatic, 1.f);
+	}
+}
+
+
 
 void AUE4Fundamentals05Character::Log(ELogLevel LogLevel, FString Message)
 {

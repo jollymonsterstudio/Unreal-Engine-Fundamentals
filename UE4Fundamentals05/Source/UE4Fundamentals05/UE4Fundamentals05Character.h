@@ -70,6 +70,15 @@ enum class EAttackType : uint8 {
 	MELEE_KICK			UMETA(DisplayName = "Melee - Kick")
 };
 
+
+UENUM(BlueprintType)
+enum class ELineTraceType : uint8 {
+	CAMERA_SINGLE	UMETA(DisplayName = "Camera - Single Line"),
+	PLAYER_SINGLE	UMETA(DisplayName = "Player - Single Line"),
+	CAMERA_SCATTER	UMETA(DisplayName = "Camera - Scattering"),
+	PLAYER_SCATTER	UMETA(DisplayName = "Player - Scattering")
+};
+
 UCLASS(config=Game)
 class AUE4Fundamentals05Character : public ACharacter
 {
@@ -107,6 +116,9 @@ public:
 
 	// Called when the game starts or when the player is spawned
 	virtual void BeginPlay() override;
+
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
 	void PunchAttack();
 	void KickAttack();
@@ -153,6 +165,16 @@ public:
 	EAttackType GetCurrentAttack();
 
 
+	void FireLineTrace();
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly,  Category = Trace)
+	ELineTraceType LineTraceType;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Trace)
+	float LineTraceDistance;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Trace)
+	float LineTraceSpread;
 
 protected:
 
@@ -208,6 +230,8 @@ private:
 	bool IsAnimationBlended;
 
 	bool IsKeyboardEnabled;
+
+	
 
 	/**
 	* Log - prints a message to all the log outputs with a specific color
