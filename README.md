@@ -33,8 +33,8 @@ You can find the associated video tutorial here: https://youtu.be/Es7iPIrh0ow
 
 ### [Fundamentals 05 - LineTraceSingleByChannel](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals05)
 
-You can find more details here: TBD
+You can find more details here: http://jollymonsterstudio.com/2019/01/06/unreal-engine-c-fundamentals-linetracesinglebychannel-and-friends-drawdebugbox-drawdebugline-fhitresult-and-vrandcone/
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/mz9C656dUuY
 
 Hope this helps, Thanks.
