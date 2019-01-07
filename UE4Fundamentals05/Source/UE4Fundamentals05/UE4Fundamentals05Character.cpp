@@ -415,25 +415,26 @@ void AUE4Fundamentals05Character::FireLineTrace()
 	TraceParams.bReturnPhysicalMaterial = true;
 
 	//Re-initialize hit info
-	FHitResult HitOut = FHitResult(ForceInit);
-
-
+	FHitResult HitDetails = FHitResult(ForceInit);
 
 	bool bIsHit = GetWorld()->LineTraceSingleByChannel(
-		HitOut,					//	FHitResult object that will be populated with hit info
+		HitDetails,				//	FHitResult object that will be populated with hit info
 		Start,					//	starting position
 		End,					//	end position
 		ECC_GameTraceChannel3,	//	collision channel
 		TraceParams				//	additional trace settings
 	);
 
-
-
 	if (bIsHit)
 	{
 		Log(ELogLevel::WARNING, "We hit something");
 		// start to end, green, will lines always stay on, depth priority, thickness of line
 		DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 5.f, ECC_WorldStatic, 1.f);
+
+		Log(ELogLevel::WARNING, HitDetails.Actor->GetName());
+		Log(ELogLevel::DEBUG, FString::SanitizeFloat(HitDetails.Distance));
+		DrawDebugBox(GetWorld(), HitDetails.ImpactPoint, FVector(2.f, 2.f, 2.f), FColor::Blue, false, 5.f, ECC_WorldStatic, 1.f);
+
 	}
 	else
 	{
