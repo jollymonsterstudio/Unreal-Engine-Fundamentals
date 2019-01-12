@@ -39,9 +39,9 @@ You can find the associated video tutorial here: https://youtu.be/mz9C656dUuY
 
 ### [Fundamentals 06 - Override and Implement a Custom UAnimInstance]()
 
-You can find more details here: TBD
+You can find more details here: http://jollymonsterstudio.com/2019/01/12/unreal-engine-c-fundamentals-override-uaniminstance/
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/6VMOCO-JcOQ
 
 
 Hope this helps, Thanks.

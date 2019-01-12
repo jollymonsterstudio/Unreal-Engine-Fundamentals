@@ -19,7 +19,7 @@ void UPlayerAnimInstance::NativeInitializeAnimation()
 	Super::NativeInitializeAnimation();
 
 	// cache the pawn
-	Pawn = TryGetPawnOwner();
+	Owner = TryGetPawnOwner();
 }
 
 void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaTimeX)
@@ -27,23 +27,23 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaTimeX)
 	Super::NativeUpdateAnimation(DeltaTimeX);
 
 	//Always Check Pointers
-	if (!Pawn)
+	if (!Owner)
 	{
 		return;
 	}
 
-	if (Pawn->IsA(AUE4Fundamentals06Character::StaticClass()))
+	if (Owner->IsA(AUE4Fundamentals06Character::StaticClass()))
 	{
-		AUE4Fundamentals06Character* PlayerCharacter = Cast<AUE4Fundamentals06Character>(Pawn);
+		AUE4Fundamentals06Character* PlayerCharacter = Cast<AUE4Fundamentals06Character>(Owner);
 		if (PlayerCharacter)
 		{
 			IsInAir = PlayerCharacter->GetMovementComponent()->IsFalling();
 			IsAnimationBlended = PlayerCharacter->GetIsAnimationBlended();
 			Speed = PlayerCharacter->GetVelocity().Size();
 
-			GEngine->AddOnScreenDebugMessage(-1, 4.5f, FColor::Yellow, "IsInAir: " + FString(IsInAir ? "true" : "false"));
-			GEngine->AddOnScreenDebugMessage(-1, 4.5f, FColor::Yellow, "IsAnimationBlended: " + FString(IsAnimationBlended ? "true" : "false"));
-			GEngine->AddOnScreenDebugMessage(-1, 4.5f, FColor::Yellow, "Speed: " + FString::SanitizeFloat(Speed));
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, "IsInAir: " + FString(IsInAir ? "true" : "false"));
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, "IsAnimationBlended: " + FString(IsAnimationBlended ? "true" : "false"));
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, "Speed: " + FString::SanitizeFloat(Speed));
 		}
 	}
 }

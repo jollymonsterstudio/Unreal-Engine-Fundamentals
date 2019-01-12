@@ -10,18 +10,18 @@
 /**
  * 
  */
-UCLASS(Transient, Blueprintable, hideCategories = AnimInstance, BlueprintType)
+UCLASS()
 class UE4FUNDAMENTALS06_API UPlayerAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 		bool IsInAir;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 		bool IsAnimationBlended;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Animation")
 		float Speed;
 
 public:
@@ -32,5 +32,5 @@ public:
 	virtual void NativeUpdateAnimation(float DeltaTimeX) override;
 
 private:
-	APawn* Pawn;
+	APawn* Owner;
 };
