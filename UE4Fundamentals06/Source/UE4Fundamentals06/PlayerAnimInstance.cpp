@@ -26,7 +26,7 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaTimeX)
 {
 	Super::NativeUpdateAnimation(DeltaTimeX);
 
-	//Always Check Pointers
+	// double check our pointers make sure nothing is empty
 	if (!Owner)
 	{
 		return;
@@ -35,6 +35,7 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaTimeX)
 	if (Owner->IsA(AUE4Fundamentals06Character::StaticClass()))
 	{
 		AUE4Fundamentals06Character* PlayerCharacter = Cast<AUE4Fundamentals06Character>(Owner);
+		// again check pointers
 		if (PlayerCharacter)
 		{
 			IsInAir = PlayerCharacter->GetMovementComponent()->IsFalling();
