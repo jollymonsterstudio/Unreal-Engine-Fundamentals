@@ -10,6 +10,6 @@ You can find more details on the subject here: http://jollymonsterstudio.com/201
 You can find the associated video tutorial here: https://youtu.be/6VMOCO-JcOQ
 
 
-The base project for this tutorial comes from [Fundamentals 06 - LineTraceSingleByChannel](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals05)
+The base project for this tutorial comes from [Fundamentals 05 - LineTraceSingleByChannel](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals05)
 
 Hope this helps, Thanks.
