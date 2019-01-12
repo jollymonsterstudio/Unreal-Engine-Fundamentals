@@ -10,7 +10,7 @@
 /**
  * 
  */
-UCLASS(transient, Blueprintable, hideCategories = AnimInstance, BlueprintType)
+UCLASS(Transient, Blueprintable, hideCategories = AnimInstance, BlueprintType)
 class UE4FUNDAMENTALS06_API UPlayerAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
