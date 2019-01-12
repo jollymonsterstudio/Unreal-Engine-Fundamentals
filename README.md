@@ -37,7 +37,7 @@ You can find more details here: http://jollymonsterstudio.com/2019/01/06/unreal-
 
 You can find the associated video tutorial here: https://youtu.be/mz9C656dUuY
 
-### [Fundamentals 06 - Override and Implement a Custom UAnimInstance]()
+### [Fundamentals 06 - Override and Implement a Custom UAnimInstance](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals06)
 
 You can find more details here: http://jollymonsterstudio.com/2019/01/12/unreal-engine-c-fundamentals-override-uaniminstance/
 
