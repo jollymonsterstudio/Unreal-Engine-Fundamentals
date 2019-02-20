@@ -45,8 +45,8 @@ You can find the associated video tutorial here: https://youtu.be/6VMOCO-JcOQ
 
 ### [Fundamentals 07 - FTimerHandle & Timers](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals07)
 
-You can find more details here: TBD
+You can find more details here: http://jollymonsterstudio.com/2019/02/19/unreal-engine-c-fundamentals-ftimerhandle-timers/
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/z_iWNEerihY
 
 Hope this helps, Thanks.
