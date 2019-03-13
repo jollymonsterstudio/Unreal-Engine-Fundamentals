@@ -49,4 +49,10 @@ You can find more details here: http://jollymonsterstudio.com/2019/02/19/unreal-
 
 You can find the associated video tutorial here: https://youtu.be/z_iWNEerihY
 
+### [Fundamentals 08 - AHUD, UUserWidget & UWidgetAnimation](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals08)
+
+You can find more details on the subject here: http://jollymonsterstudio.com/2019/03/12/unreal-engine-c-fundamentals-ahud-uuserwidget-and-uwidgetanimation/
+
+You can find the associated video tutorial here: https://youtu.be/lYfXkxlInVI
+
 Hope this helps, Thanks.
