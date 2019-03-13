@@ -57,21 +57,21 @@ void UHitComboWidget::StoreWidgetAnimations()
 
 	UProperty* Prop = GetClass()->PropertyLink;
 
-	// Run through all properties of this class to find any widget animations
-	while (Prop != nullptr)
+	// check each property of this class
+	while (Prop)
 	{
-		// Only interested in object properties
+		// only evaluate object properties, skip rest
 		if (Prop->GetClass() == UObjectProperty::StaticClass())
 		{
 			UObjectProperty* ObjProp = Cast<UObjectProperty>(Prop);
 
-			// Only want the properties that are widget animations
+			// only get back properties that are of type widget animation
 			if (ObjProp->PropertyClass == UWidgetAnimation::StaticClass())
 			{
 				UObject* Obj = ObjProp->GetObjectPropertyValue_InContainer(this);
-
+				// only get back properties that are of type widget animation
 				UWidgetAnimation* WidgetAnimation = Cast<UWidgetAnimation>(Obj);
-
+				// if casting worked update map with new animation
 				if (WidgetAnimation && WidgetAnimation->MovieScene)
 				{
 					FName AnimName = WidgetAnimation->MovieScene->GetFName();
