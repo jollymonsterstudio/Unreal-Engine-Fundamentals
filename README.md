@@ -55,4 +55,10 @@ You can find more details on the subject here: http://jollymonsterstudio.com/201
 
 You can find the associated video tutorial here: https://youtu.be/lYfXkxlInVI
 
+### [Fundamentals 09 - Interfaces](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals09)
+
+You can find more details on the subject here: http://jollymonsterstudio.com/2019/05/30/unreal-engine-c-fundamentals-interfaces/
+
+You can find the associated video tutorial here: https://youtu.be/I7z8gVgM9rE
+
 Hope this helps, Thanks.
