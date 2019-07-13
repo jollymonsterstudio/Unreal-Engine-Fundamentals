@@ -61,4 +61,10 @@ You can find more details on the subject here: http://jollymonsterstudio.com/201
 
 You can find the associated video tutorial here: https://youtu.be/I7z8gVgM9rE
 
+### [Fundamentals 10 - Using Tags with Transformations](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals10)
+
+You can find more details on the subject here: http://jollymonsterstudio.com/2019/07/03/unreal-engine-c-fundamentals-using-tags-with-transformations/
+
+You can find the associated video tutorial here: https://youtu.be/CZJsmQ6PCwE
+
 Hope this helps, Thanks.
