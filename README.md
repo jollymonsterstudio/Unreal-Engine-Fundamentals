@@ -67,4 +67,11 @@ You can find more details on the subject here: http://jollymonsterstudio.com/201
 
 You can find the associated video tutorial here: https://youtu.be/CZJsmQ6PCwE
 
+### [Fundamentals 11 - Character possession and changing materials](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals11)
+
+You can find more details on the subject here: http://jollymonsterstudio.com/2019/09/05/unreal-engine-c-fundamentals-character-possession-and-changing-materials/
+
+You can find the associated video tutorial here: https://youtu.be/DDJ1wng0wJg
+
+
 Hope this helps, Thanks.
