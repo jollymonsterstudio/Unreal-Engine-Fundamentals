@@ -16,9 +16,6 @@ enum class ESplineMeshType: uint8 {
 	DEFAULT		UMETA(DisplayName = "Default Mesh"),
 	START		UMETA(DisplayName = "Starting Mesh"),
 	END			UMETA(DisplayName = "EndingMesh"),
-	ODD			UMETA(DisplayName = "Odd Numbered Mesh"),
-	EVEN		UMETA(DisplayName = "Even Numbered Mesh")
-	
 };
 
 USTRUCT(BlueprintType)

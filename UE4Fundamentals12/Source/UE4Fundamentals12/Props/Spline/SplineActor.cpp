@@ -58,12 +58,21 @@ void ASplineActor::OnConstruction(const FTransform& Transform)
 		{
 			DefaultMeshDetails = SplineMeshMap.Find(ESplineMeshType::DEFAULT);	
 		}
+		else
+		{
+			// exit if we don't have a default mesh to work with
+			return;
+		}
+		
 
 		for(int SplineCount = 0; SplineCount < (SplineComponent->GetNumberOfSplinePoints() - 1); SplineCount++)
 		{
 			USplineMeshComponent *SplineMesh = NewObject<USplineMeshComponent>(this, USplineMeshComponent::StaticClass());
 	
 			const int32 SplinePoints = SplineComponent->GetNumberOfSplinePoints();
+
+
+			
 	
 			// first
 			if(StartMeshDetails && EndMeshDetails)
