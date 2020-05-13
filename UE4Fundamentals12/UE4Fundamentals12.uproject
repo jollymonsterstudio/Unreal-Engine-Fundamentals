@@ -1,0 +1,35 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "4.24",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "UE4Fundamentals12",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"UMG"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "OculusVR",
+			"Enabled": false
+		},
+		{
+			"Name": "SteamVR",
+			"Enabled": false
+		},
+		{
+			"Name": "ApexDestruction",
+			"Enabled": true
+		},
+		{
+			"Name": "HoudiniEngine",
+			"Enabled": false
+		}
+	]
+}
