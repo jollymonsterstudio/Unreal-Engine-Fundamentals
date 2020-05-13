@@ -71,64 +71,65 @@ void ASplineActor::OnConstruction(const FTransform& Transform)
 	
 			const int32 SplinePoints = SplineComponent->GetNumberOfSplinePoints();
 
-
-			
+			UStaticMesh* StaticMesh = DefaultMeshDetails->Mesh;
+			UMaterialInterface* Material = nullptr;
+			ESplineMeshAxis::Type ForwardAxis = DefaultMeshDetails->ForwardAxis;
 	
 			// first
 			if(StartMeshDetails && EndMeshDetails)
 			{
 				if(SplineCount == 0)
 				{
-					SplineMesh->SetStaticMesh(StartMeshDetails->Mesh);
-					SplineMesh->SetForwardAxis(StartMeshDetails->ForwardAxis, true);
+					StaticMesh = StartMeshDetails->Mesh;
+					ForwardAxis = StartMeshDetails->ForwardAxis;
 					
 					if(StartMeshDetails->DefaultMaterial)
 					{
-						SplineMesh->SetMaterial(0, StartMeshDetails->DefaultMaterial);	
+						Material = StartMeshDetails->DefaultMaterial;
 					}					
 				}
 				else if(SplinePoints > 2 && SplineCount == (SplinePoints - 2))
 				{
 					// end cap
-					SplineMesh->SetStaticMesh(EndMeshDetails->Mesh);
-					SplineMesh->SetForwardAxis(EndMeshDetails->ForwardAxis, true);
+					StaticMesh = EndMeshDetails->Mesh;
+					ForwardAxis = EndMeshDetails->ForwardAxis;
 					
 					if(EndMeshDetails->DefaultMaterial)
 					{
-						SplineMesh->SetMaterial(0, EndMeshDetails->DefaultMaterial);	
-					}					
+						Material = EndMeshDetails->DefaultMaterial;
+					}	
 				}
 				else
 				{
-					// assign our mesh
-					SplineMesh->SetStaticMesh(DefaultMeshDetails->Mesh);
-					SplineMesh->SetForwardAxis(DefaultMeshDetails->ForwardAxis, true);
-				
+					// default assignment
 					if(DefaultMeshDetails->EvenMaterial && SplineCount > 0 && SplineCount % 2 == 0)
 					{
-						SplineMesh->SetMaterial(0, DefaultMeshDetails->EvenMaterial);
+						Material = DefaultMeshDetails->EvenMaterial;
 					}
 					else if(DefaultMeshDetails->DefaultMaterial)
 					{
-						SplineMesh->SetMaterial(0, DefaultMeshDetails->DefaultMaterial);
+						Material = DefaultMeshDetails->DefaultMaterial;
 					}			
 				}
 			}
 			else
 			{
-				// assign our mesh
-				SplineMesh->SetStaticMesh(DefaultMeshDetails->Mesh);
-				SplineMesh->SetForwardAxis(DefaultMeshDetails->ForwardAxis, true);
-				
-				if(DefaultMeshDetails->EvenMaterial && SplineCount > 0 && SplineCount % 2 == 1)
+				// default assignment
+				if(DefaultMeshDetails->EvenMaterial && SplineCount > 0 && SplineCount % 2 == 0)
 				{
-					SplineMesh->SetMaterial(0, DefaultMeshDetails->EvenMaterial);
+					Material = DefaultMeshDetails->EvenMaterial;
 				}
 				else if(DefaultMeshDetails->DefaultMaterial)
 				{
-					SplineMesh->SetMaterial(0, DefaultMeshDetails->DefaultMaterial);
-				}				
+					Material = DefaultMeshDetails->DefaultMaterial;
+				}			
 			}
+
+			// update mesh details
+			SplineMesh->SetStaticMesh(StaticMesh);
+			SplineMesh->SetForwardAxis(ForwardAxis, true);
+			SplineMesh->SetMaterial(0, Material);
+			
 	
 			// initialize the object
 			SplineMesh->RegisterComponentWithWorld(GetWorld());
