@@ -64,12 +64,11 @@ void ASplineActor::OnConstruction(const FTransform& Transform)
 			return;
 		}
 		
+		const int32 SplinePoints = SplineComponent->GetNumberOfSplinePoints();
 
-		for(int SplineCount = 0; SplineCount < (SplineComponent->GetNumberOfSplinePoints() - 1); SplineCount++)
+		for(int SplineCount = 0; SplineCount < (SplinePoints - 1); SplineCount++)
 		{
 			USplineMeshComponent *SplineMesh = NewObject<USplineMeshComponent>(this, USplineMeshComponent::StaticClass());
-	
-			const int32 SplinePoints = SplineComponent->GetNumberOfSplinePoints();
 
 			UStaticMesh* StaticMesh = DefaultMeshDetails->Mesh;
 			UMaterialInterface* Material = nullptr;
