@@ -75,7 +75,7 @@ You can find the associated video tutorial here: https://youtu.be/DDJ1wng0wJg
 
 ### [Fundamentals 12 - Using Spline Components](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals12)
 
-You can find more details on the subject here: TBD
+You can find more details on the subject here: http://jollymonsterstudio.com/2020/05/13/unreal-engine-c-fundamentals-using-spline-components/
 
 You can find the associated video tutorial here: https://youtu.be/iD3l44uMd58
 
