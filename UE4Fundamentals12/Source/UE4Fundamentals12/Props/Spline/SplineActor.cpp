@@ -76,48 +76,33 @@ void ASplineActor::OnConstruction(const FTransform& Transform)
 			ESplineMeshAxis::Type ForwardAxis = DefaultMeshDetails->ForwardAxis;
 	
 			// first
-			if(StartMeshDetails && EndMeshDetails)
+			if(StartMeshDetails && StartMeshDetails->Mesh && SplineCount == 0)
 			{
-				if(SplineCount == 0)
+				StaticMesh = StartMeshDetails->Mesh;
+				ForwardAxis = StartMeshDetails->ForwardAxis;
+				
+				if(StartMeshDetails->DefaultMaterial)
 				{
-					StaticMesh = StartMeshDetails->Mesh;
-					ForwardAxis = StartMeshDetails->ForwardAxis;
-					
-					if(StartMeshDetails->DefaultMaterial)
-					{
-						Material = StartMeshDetails->DefaultMaterial;
-					}					
-				}
-				else if(SplinePoints > 2 && SplineCount == (SplinePoints - 2))
+					Material = StartMeshDetails->DefaultMaterial;
+				}					
+			}
+			else if(EndMeshDetails && EndMeshDetails->Mesh && SplinePoints > 2 && SplineCount == (SplinePoints - 2))
+			{
+				// end cap
+				StaticMesh = EndMeshDetails->Mesh;
+				ForwardAxis = EndMeshDetails->ForwardAxis;
+				
+				if(EndMeshDetails->DefaultMaterial)
 				{
-					// end cap
-					StaticMesh = EndMeshDetails->Mesh;
-					ForwardAxis = EndMeshDetails->ForwardAxis;
-					
-					if(EndMeshDetails->DefaultMaterial)
-					{
-						Material = EndMeshDetails->DefaultMaterial;
-					}	
-				}
-				else
-				{
-					// default assignment
-					if(DefaultMeshDetails->EvenMaterial && SplineCount > 0 && SplineCount % 2 == 0)
-					{
-						Material = DefaultMeshDetails->EvenMaterial;
-					}
-					else if(DefaultMeshDetails->DefaultMaterial)
-					{
-						Material = DefaultMeshDetails->DefaultMaterial;
-					}			
-				}
+					Material = EndMeshDetails->DefaultMaterial;
+				}	
 			}
 			else
 			{
 				// default assignment
-				if(DefaultMeshDetails->EvenMaterial && SplineCount > 0 && SplineCount % 2 == 0)
+				if(DefaultMeshDetails->AlternativeMaterial && SplineCount > 0 && SplineCount % 2 == 0)
 				{
-					Material = DefaultMeshDetails->EvenMaterial;
+					Material = DefaultMeshDetails->AlternativeMaterial;
 				}
 				else if(DefaultMeshDetails->DefaultMaterial)
 				{

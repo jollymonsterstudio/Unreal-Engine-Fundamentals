@@ -33,7 +33,7 @@ struct FSplineMeshDetails : public FTableRowBase
 	class UMaterialInterface* DefaultMaterial;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	class UMaterialInterface* EvenMaterial;
+	class UMaterialInterface* AlternativeMaterial;
 
 	FSplineMeshDetails() : ForwardAxis(ESplineMeshAxis::Type::X)
 	{

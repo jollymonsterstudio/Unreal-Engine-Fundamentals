@@ -73,11 +73,11 @@ You can find more details on the subject here: http://jollymonsterstudio.com/201
 
 You can find the associated video tutorial here: https://youtu.be/DDJ1wng0wJg
 
-### [Fundamentals 12 - Spline Actor](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals12)
+### [Fundamentals 12 - Using Spline Components](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals12)
 
 You can find more details on the subject here: TBD
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/iD3l44uMd58
 
 
 Hope this helps, Thanks.

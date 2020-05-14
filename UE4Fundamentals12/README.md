@@ -1,13 +1,13 @@
 # Unreal Engine C++ Fundamentals
-### Fundamentals 12 - Spline Actor
+### Fundamentals 12 - Using Spline Components
 
 Hey guys,
 
-In this Unreal Engine C++ Fundamentals tutorial we are going to look at creating spline actors for re-use in various parts of our game design.
+In this tutorial we are going to take a look how to use Spline Components and modify their various properties to allow us to specify custom materials as well as determine how meshes are attached to the spline.
 
 You can find more details on the subject here: TBD
 
-You can find the associated video tutorial here: TBD
+You can find the associated video tutorial here: https://youtu.be/iD3l44uMd58
 
 
 Hope this helps, Thanks.
