@@ -74,7 +74,7 @@ void ASplineActor::OnConstruction(const FTransform& Transform)
 			UMaterialInterface* Material = nullptr;
 			ESplineMeshAxis::Type ForwardAxis = DefaultMeshDetails->ForwardAxis;
 	
-			// first
+			// start mesh
 			if(StartMeshDetails && StartMeshDetails->Mesh && SplineCount == 0)
 			{
 				StaticMesh = StartMeshDetails->Mesh;
@@ -87,7 +87,7 @@ void ASplineActor::OnConstruction(const FTransform& Transform)
 			}
 			else if(EndMeshDetails && EndMeshDetails->Mesh && SplinePoints > 2 && SplineCount == (SplinePoints - 2))
 			{
-				// end cap
+				// end mesh
 				StaticMesh = EndMeshDetails->Mesh;
 				ForwardAxis = EndMeshDetails->ForwardAxis;
 				
@@ -98,7 +98,7 @@ void ASplineActor::OnConstruction(const FTransform& Transform)
 			}
 			else
 			{
-				// default assignment
+				// default assignment - middle mesh
 				if(DefaultMeshDetails->AlternativeMaterial && SplineCount > 0 && SplineCount % 2 == 0)
 				{
 					Material = DefaultMeshDetails->AlternativeMaterial;
