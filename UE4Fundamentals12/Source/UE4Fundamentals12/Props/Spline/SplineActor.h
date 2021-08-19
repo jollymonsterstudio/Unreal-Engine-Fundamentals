@@ -50,6 +50,7 @@ public:
 	ASplineActor();
 
 	void OnConstruction(const FTransform& Transform) override;
+	void CreateSplineMeshComponents();
 	
 protected:
 	// Called when the game starts or when spawned
