@@ -1,0 +1,2 @@
+G:\code\Unreal-Engine-Fundamentals\UE4Fundamentals13\Intermediate\Build\Win64\UE4Editor\Development\UE4Fundamentals13\Definitions.UE4Fundamentals13.h
+G:\code\Unreal-Engine-Fundamentals\UE4Fundamentals13\Source\UE4Fundamentals13\UE4Fundamentals13.h

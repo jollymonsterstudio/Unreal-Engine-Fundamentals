@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UE4Fundamentals13.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{C2129C21-CDA4-4DE9-9A43-EDB89A639A6F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UE4Fundamentals13.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UE4Fundamentals13Editor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{C3FA0CA1-13A3-4EDC-A425-D359172F1BE6}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UE4Fundamentals13">
+      <UniqueIdentifier>{EF9222D3-F90D-4B40-A8FB-6BCC222D6290}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UE4Fundamentals13\UE4Fundamentals13.Build.cs">
+      <Filter>Source\UE4Fundamentals13</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UE4Fundamentals13\UE4Fundamentals13.cpp">
+      <Filter>Source\UE4Fundamentals13</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4Fundamentals13\UE4Fundamentals13.h">
+      <Filter>Source\UE4Fundamentals13</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4Fundamentals13\UE4Fundamentals13Character.cpp">
+      <Filter>Source\UE4Fundamentals13</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4Fundamentals13\UE4Fundamentals13Character.h">
+      <Filter>Source\UE4Fundamentals13</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UE4Fundamentals13\UE4Fundamentals13GameMode.cpp">
+      <Filter>Source\UE4Fundamentals13</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4Fundamentals13\UE4Fundamentals13GameMode.h">
+      <Filter>Source\UE4Fundamentals13</Filter>
+    </ClInclude>
+    <Filter Include="Source\UE4Fundamentals13\Props">
+      <UniqueIdentifier>{F129BB81-A7FD-4461-968E-F074D8F885F5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UE4Fundamentals13\Props\SplineActor.cpp">
+      <Filter>Source\UE4Fundamentals13\Props</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UE4Fundamentals13\Props\SplineActor.h">
+      <Filter>Source\UE4Fundamentals13\Props</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

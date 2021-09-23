@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UE4Fundamentals13",
+			"Path": "G:\\code\\Unreal-Engine-Fundamentals\\UE4Fundamentals13\\Source\\UE4Fundamentals13.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UE4Fundamentals13Editor",
+			"Path": "G:\\code\\Unreal-Engine-Fundamentals\\UE4Fundamentals13\\Source\\UE4Fundamentals13Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

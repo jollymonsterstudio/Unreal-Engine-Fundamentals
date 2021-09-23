@@ -1,0 +1,15 @@
+G:\code\Unreal-Engine-Fundamentals\UE4Fundamentals13\Intermediate\Build\Win64\UE4Editor\Development\UE4Fundamentals13\Definitions.UE4Fundamentals13.h
+G:\code\Unreal-Engine-Fundamentals\UE4Fundamentals13\Source\UE4Fundamentals13\UE4Fundamentals13GameMode.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+G:\code\Unreal-Engine-Fundamentals\UE4Fundamentals13\Intermediate\Build\Win64\UE4Editor\Inc\UE4Fundamentals13\UE4Fundamentals13GameMode.generated.h
+G:\code\Unreal-Engine-Fundamentals\UE4Fundamentals13\Source\UE4Fundamentals13\UE4Fundamentals13Character.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+G:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+G:\code\Unreal-Engine-Fundamentals\UE4Fundamentals13\Intermediate\Build\Win64\UE4Editor\Inc\UE4Fundamentals13\UE4Fundamentals13Character.generated.h

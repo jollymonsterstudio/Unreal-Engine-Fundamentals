@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"G:\\code\\Unreal-Engine-Fundamentals\\UE4Fundamentals13\\Source\\UE4Fundamentals13\\UE4Fundamentals13.Build.cs",
+		"G:\\code\\Unreal-Engine-Fundamentals\\UE4Fundamentals13\\Source\\UE4Fundamentals13.Target.cs",
+		"G:\\code\\Unreal-Engine-Fundamentals\\UE4Fundamentals13\\Source\\UE4Fundamentals13Editor.Target.cs"
+	],
+	"EngineVersion": "4.27.0"
+}
