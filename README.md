@@ -79,5 +79,11 @@ You can find more details on the subject here: http://jollymonsterstudio.com/202
 
 You can find the associated video tutorial here: https://youtu.be/iD3l44uMd58
 
+### [Fundamentals 13 - Moving Static Meshes along a Spline Component](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals13)
+
+You can find more details on the subject here: http://jollymonsterstudio.com/2021/10/01/unreal-engine-c-fundamentals-moving-static-meshes-along-a-spline-component/
+
+You can find the associated video tutorial here: https://youtu.be/iGygYpXY75w
+
 
 Hope this helps, Thanks.
