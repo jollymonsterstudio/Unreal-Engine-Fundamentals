@@ -85,5 +85,11 @@ You can find more details on the subject here: http://jollymonsterstudio.com/202
 
 You can find the associated video tutorial here: https://youtu.be/iGygYpXY75w
 
+### [Fundamentals 14 - Using Inheritance by moving the player & particles along a spline](https://github.com/jollymonsterstudio/Unreal-Engine-Fundamentals/tree/master/UE4Fundamentals14)
+
+You can find more details on the subject here: http://jollymonsterstudio.com/2021/10/17/unreal-engine-c-fundamentals-using-inheritance-by-moving-the-player-particles-along-a-spline/
+
+You can find the associated video tutorial here: https://youtu.be/LBjUDVEECVQ
+
 
 Hope this helps, Thanks.
