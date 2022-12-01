@@ -25,6 +25,7 @@ void ASplineActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	CreateSplineMeshComponents();
 }
 
 // Called every frame
@@ -37,7 +38,12 @@ void ASplineActor::Tick(float DeltaTime)
 void ASplineActor::OnConstruction(const FTransform& Transform)
 {	
 	Super::OnConstruction(Transform);
+	
+	CreateSplineMeshComponents();
+}
 
+void ASplineActor::CreateSplineMeshComponents()
+{
 	if(SplineComponent && SplineMeshMap.Num() > 0)
 	{
 		// lookup all pertinent values
